@@ -32,18 +32,22 @@ function wf_enqueue_scripts(){
     wp_enqueue_style( 'watermark_admin_css' );
 }
 
-function wf_check_woocommerce_plugin_activate() {
-    // Check if WooCommerce is active
-    if ( ! is_plugin_active( 'woocommerce/woocommerce.php' )) {
-        deactivate_plugins(plugin_basename(__FILE__));
-        add_action( 'admin_notices', 'wf_show_woocommerce_required_notice' );       
+if( ! function_exists('wf_check_woocommerce_plugin_activate')) {
+    function wf_check_woocommerce_plugin_activate() {
+        // Check if WooCommerce is active
+        if ( ! is_plugin_active( 'woocommerce/woocommerce.php' )) {
+            deactivate_plugins(plugin_basename(__FILE__));
+            add_action( 'admin_notices', 'wf_show_woocommerce_required_notice' );       
+        }
     }
 }
 
-function wf_show_woocommerce_required_notice() {
-    ?>
-    <div class="notice notice-error is-dismissible">
-        <p><?php _e( '"WooCommerce product watermark image" plugin requires WooCommerce to be installed and active. Please install or activate WooCommerce.', 'wf-watermark' ); ?></p>
-    </div>
-    <?php
+if( ! function_exists('wf_show_woocommerce_required_notice')) {
+    function wf_show_woocommerce_required_notice() {
+        ?>
+        <div class="notice notice-error is-dismissible">
+            <p><?php _e( '"WooCommerce product watermark image" plugin requires WooCommerce to be installed and active. Please install or activate WooCommerce.', 'wf-watermark' ); ?></p>
+        </div>
+        <?php
+    }
 }
