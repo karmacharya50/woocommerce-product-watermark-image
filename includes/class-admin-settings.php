@@ -5,7 +5,8 @@
  * @version 1.0.0
  * @author  WPFactory
  */
-if (!class_exists('Admin_Settings')) {
+
+if ( ! class_exists('Admin_Settings') ) {
     class Admin_Settings {
     
         public function __construct() {
