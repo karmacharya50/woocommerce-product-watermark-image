@@ -6,6 +6,8 @@
  * @author  WPFactory
  */
 
+defined( 'ABSPATH' ) || exit;
+
 if ( ! class_exists('Admin_Settings') ) {
     class Admin_Settings {
     
