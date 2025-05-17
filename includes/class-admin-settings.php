@@ -14,8 +14,8 @@ if ( ! class_exists('Admin_Settings') ) {
         public function __construct() {
     
             // Admin settings for watermark configuration
-            add_action( 'admin_menu', array($this, 'create_watermark_settings_page') );
-            add_action( 'admin_init', array($this, 'register_settings') );
+            add_action( 'admin_menu', array( $this, 'create_watermark_settings_page' ) );
+            add_action( 'admin_init', array( $this, 'register_settings' ) );
         }
        
         // Create settings page for watermark options
@@ -25,7 +25,7 @@ if ( ! class_exists('Admin_Settings') ) {
                 __( 'Watermark Settings', 'wf-watermark' ),
                 'manage_options',
                 'wf-watermark-settings',
-                array($this, 'watermark_settings_page')
+                array( $this, 'watermark_settings_page' )
             );
         }
     

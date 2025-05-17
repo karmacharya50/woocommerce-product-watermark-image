@@ -3,7 +3,7 @@
 Plugin Name: WooCommerce product Watermark Image
 Plugin URI: https://wpfactory.com/
 Description: Image Watermark for WooCommerce product, Product Gallery and Variable product. Image watermark for previously uploaded product images.
-Version: 1.0.0
+Version: 1.0.1
 Author: WPFactory
 Author URI: https://wpfactory.com/
 Text Domain: wf-watermark
@@ -32,11 +32,11 @@ function wf_enqueue_scripts(){
     wp_enqueue_style( 'watermark_admin_css' );
 }
 
-if( ! function_exists('wf_check_woocommerce_plugin_activate')) {
+if( ! function_exists( 'wf_check_woocommerce_plugin_activate' ) ) {
     function wf_check_woocommerce_plugin_activate() {
         // Check if WooCommerce is active
-        if ( ! is_plugin_active( 'woocommerce/woocommerce.php' )) {
-            deactivate_plugins(plugin_basename(__FILE__));
+        if ( ! is_plugin_active( 'woocommerce/woocommerce.php' ) ) {
+            deactivate_plugins( plugin_basename(__FILE__) );
             add_action( 'admin_notices', 'wf_show_woocommerce_required_notice' );       
         }
     }
