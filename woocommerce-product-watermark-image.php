@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: WooCommerce product Watermark Image
+Plugin Name: WooCommerce products Watermark Image
 Plugin URI: https://wpfactory.com/
 Description: Image Watermark for WooCommerce product, Product Gallery and Variable product. Image watermark for previously uploaded product images.
 Version: 1.0.1
@@ -20,6 +20,7 @@ require_once plugin_dir_path( __FILE__ ) . 'includes/class-admin-settings.php';
 require_once plugin_dir_path( __FILE__ ) . 'includes/class-product-watermark-image.php';
 require_once plugin_dir_path( __FILE__ ) . 'includes/functions.php';
 require_once ABSPATH . 'wp-admin/includes/image.php';
+
 
 // Check for active plugins
 add_action( 'admin_init', 'wf_check_woocommerce_plugin_activate' );
