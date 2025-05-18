@@ -1,8 +1,8 @@
 <?php
 /*
-Plugin Name: WooCommerce product Watermark Image
+Plugin Name: WooCommerce Product Watermark Image
 Plugin URI: https://wpfactory.com/
-Description: Image Watermark for WooCommerce product, Product Gallery and Variable product. Image watermark for previously uploaded product images.
+Description: Image Watermark for WooCommerce product, Product Gallery, and Variable product. Image watermark for previously uploaded product images.
 Version: 1.0.1
 Author: WPFactory
 Author URI: https://wpfactory.com/
@@ -19,7 +19,7 @@ if (!defined('ABSPATH')) {
 require_once plugin_dir_path( __FILE__ ) . 'includes/class-admin-settings.php';
 require_once plugin_dir_path( __FILE__ ) . 'includes/class-product-watermark-image.php';
 require_once plugin_dir_path( __FILE__ ) . 'includes/functions.php';
-require_once ABSPATH . 'wp-admin/includes/image.php';
+require_once ABSPATH. 'wp-admin/includes/image.php';
 
 // Check for active plugins
 add_action( 'admin_init', 'wf_check_woocommerce_plugin_activate' );
@@ -45,7 +45,7 @@ if( ! function_exists( 'wf_check_woocommerce_plugin_activate' ) ) {
 if( ! function_exists('wf_show_woocommerce_required_notice')) {
     function wf_show_woocommerce_required_notice() {
         ?>
-        <div class="notice notice-error is-dismissible">
+        <div class=" notice notice-error is-dismissible ">
             <p><?php _e( '"WooCommerce product watermark image" plugin requires WooCommerce to be installed and active. Please install or activate WooCommerce.', 'wf-watermark' ); ?></p>
         </div>
         <?php
